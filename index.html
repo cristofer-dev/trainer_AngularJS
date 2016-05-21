@@ -1,15 +1,22 @@
 <!doctype html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="taskApp">
 <head>
   <meta charset="utf-8">
   <title>HTML File AngularJS</title>
   
   
   <script src="angular_1.5.5.min.js"></script>
+  <script src="js/controller.js"></script>
 </head>
-<body>
+<body ng-controller="TaskListCtrl">
 
-  <p>Sumando {{ 5 + 2 }}</p>
+
+<table>
+    <tr ng-repeat="task in tasks">
+        <td>{{task.description}}</td>
+        <td>{{task.priority}}</td>
+    </tr>
+</table>
 
 </body>
 </html>
