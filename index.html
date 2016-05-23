@@ -6,17 +6,36 @@
   
   
   <script src="angular_1.5.5.min.js"></script>
-  <script src="js/controller.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script type="text/javascript" src="js/controller.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js" ></script>
 </head>
 <body ng-controller="TaskListCtrl">
+<div class="container">
+    
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">Lista de Tareas</div>
+        <div class="panel-body">
+            
+        </div>
+            <table class="table">
+                <tr>
+                    <td>Prioridad</td>
+                    <td>Tarea</td>                    
+                </tr>
+                <tr ng-repeat="task in tasks">
+                    <td>{{task.priority}}</td>
+                    <td>{{task.description}}</td>                    
+                </tr>
+            </table>
+        
+        <div class="panel-footer">Panel Footer</div>
+    </div>
+</div>
 
 
-<table>
-    <tr ng-repeat="task in tasks">
-        <td>{{task.description}}</td>
-        <td>{{task.priority}}</td>
-    </tr>
-</table>
+
 
 </body>
 </html>
