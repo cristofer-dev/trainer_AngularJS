@@ -28,7 +28,13 @@ angular.module('taskApp',['ui.router'])
         $scope.masPrioridad = function(tarea) {
             tarea.prioridad +=1;
         }
+
         $scope.menosPrioridad = function(tarea) {
             tarea.prioridad -=1;
+        }
+
+        $scope.eliminar = function(tarea) {
+            var indice = $scope.tareas.indexOf(tarea);
+            $scope.tareas.splice(indice,1);
         }
     })
