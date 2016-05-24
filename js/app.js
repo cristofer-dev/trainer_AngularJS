@@ -1,0 +1,13 @@
+angular.module('taskApp',['ui.router'])
+    .config(function($stateProvider,$urlRouterProvider){
+        $stateProvider
+            .state('alta',{
+                url:'/alta',
+                templateUrl:'views/tarea_agregar.html'
+            })            
+            .state('editar',{
+                url:'/editar',
+                templateUrl:'views/tarea_editar.html'
+            });
+        $urlRouterProvider.otherwise('alta');
+    })

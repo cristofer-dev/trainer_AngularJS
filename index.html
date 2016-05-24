@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="taskApp">
+<html lang="en" >
 <head>
   <meta charset="utf-8">
   <title>HTML File AngularJS</title>
@@ -12,8 +12,9 @@
   <link rel="stylesheet" href="css/bootswatch.css">
   <script type="text/javascript" src="js/controller.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js" ></script>
+  <script type="text/javascript" src="js/app.js" ></script>
 </head>
-<body ng-controller="TaskListCtrl">
+<body ng-app="taskApp">
 <div class="container col-md-6 col-md-offset-3">
 
 
@@ -30,32 +31,7 @@
         <div class="panel-body">
 
 
-            <legend>Nueva Tarea</legend>
-                <div class="form-group">
-                <form action="">
-                <div class="row">
-                    <div class="col-md-8">
-                        <label class="control-label" for="inputDefault">Nueva Tarea</label>
-                        <input class="form-control" id="inputDefault" type="text" ng-model="tarea.nombre">
-                    </div>
-                    <div class="col-md-2">
-                        <label class="control-label" for="inputDefault">Prioridad</label>
-                        <select class="form-control" id="select" ng-model="tarea.prioridad">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                        </select>
-                    </div>
-                    <div class="col-md-1">
-                        <label class="control-label" for="inputDefault">Guardar</label><br>
-                        <button type="submit" id="submit" class="btn btn-success">Agregar</button>
-                    </div>
-                    
-
-                    
-                </div>
-                </form>
-                </div>    
+            <ui-view></ui-view>
 
         
             
@@ -68,7 +44,7 @@
                     <td>Prioridad</td>
                     <td>Tarea</td>                    
                 </tr>
-                <tr ng-repeat="tarea in tareas">
+                <tr >
                     <td>{{tarea.priority}} 
                         <a href="#" class="glyphicon glyphicon-circle-arrow-up fa-2x"></a>
                         <a href="#" class="glyphicon glyphicon-circle-arrow-down fa-lg"></a>
