@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" ng-app="taskApp">
+<head>
+  <meta charset="utf-8">
+  <title>HTML File AngularJS</title>
+  
+  
+  <script src="angular_1.5.5.min.js"></script>
+  
+  <link rel="stylesheet" href="css/bootswatch.css">
+  <script type="text/javascript" src="js/controller.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js" ></script>
+</head>
+<body ng-controller="TaskListCtrl">
+<div class="container">
+
+    <div class="panel panel-primary">
+    <div class="panel-heading"><h2>Gestor de Tareas</h2></div>
+    <div class="panel-body">
+        <legend>Editar Tarea</legend>
+            <div class="form-group">
+            <form action="">
+                <div class="row">
+                    <div class="col-md-8">
+                        <label class="control-label" for="inputDefault">Tarea</label>
+                        <input class="form-control" id="inputDefault" type="text" ng-model="tarea.nombre" value="{{tarea.nombre}}">
+                    </div>
+                    <div class="col-md-1">
+                        <label class="control-label" for="inputDefault">Prioridad</label>
+                        <select class="form-control" id="select" ng-model="tarea.prioridad">
+                            <option value="{{tarea.prioridad}}">{{tarea.prioridad}}</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                    <div class="col-md-1">
+                        <br>
+                        <button type="submit" id="submit" class="btn btn-success">Actualizar</button>
+                    </div>
+                    <div class="col-md-1">
+                        <br>
+                        <button type="submit" id="submit" class="btn btn-danger">Eliminar</button>
+                    </div>
+                    
+
+                    
+                </div>
+            </form>
+            </div> 
+
+    </div>
+    <div class="panel-footer">Panel Footer</div>
+    </div>
+</div>
+</body>
+</html>
