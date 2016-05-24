@@ -33,8 +33,8 @@
                 </tr>
                 <tr ng-repeat="tarea in tareas | orderBy:'-prioridad'">
                     <td>{{prioridades[tarea.prioridad]}} 
-                        <a href="#" class="glyphicon glyphicon-circle-arrow-up fa-2x"></a>
-                        <a href="#" class="glyphicon glyphicon-circle-arrow-down fa-lg"></a>
+                        <a href="#" class="glyphicon glyphicon-circle-arrow-up" ng-click="masPrioridad(tarea)"></a>
+                        <a href="#" class="glyphicon glyphicon-circle-arrow-down" ng-click="menosPrioridad(tarea)"></a>
                     </td>
                     <td>{{tarea.nombre}}</td>                    
                     <td><a href="#" class="btn btn-warning btn-xs" ui-sref="editar({id:5})">Editar</a></td>

@@ -23,5 +23,12 @@ angular.module('taskApp',['ui.router'])
                 nombre : $scope.tarea.nombre,
                 prioridad : parseInt($scope.tarea.prioridad)
             })
+        },
+
+        $scope.masPrioridad = function(tarea) {
+            tarea.prioridad +=1;
+        }
+        $scope.menosPrioridad = function(tarea) {
+            tarea.prioridad -=1;
         }
     })
