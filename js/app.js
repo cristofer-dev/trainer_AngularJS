@@ -79,7 +79,10 @@ angular.module('taskApp',['ui.router'])
             $state.go('alta');
         }
 
-
+        $scope.eliminar = function(){
+            comun.eliminar($scope.tarea);
+            $state.go('alta');
+        }
 
 
     })
