@@ -35,7 +35,7 @@
                         <a href="#" class="glyphicon glyphicon-circle-arrow-down" ng-click="menosPrioridad(tarea)" ng-hide="tarea.prioridad==0"></a>
                     </td>
                     <td>{{tarea.nombre}}</td>                    
-                    <td><a href="#" class="btn btn-warning btn-xs" ui-sref="editar({id:5})">Editar</a></td>
+                    <td><a href="#" class="btn btn-warning btn-xs" ng-click="procesaObjeto(tarea)">Editar</a></td>
                     <td><a href="#" class="btn btn-danger btn-xs" ng-click="eliminar(tarea)">Eliminar</a></td>
                 </tr>
             </table>

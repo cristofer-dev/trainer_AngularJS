@@ -8,7 +8,8 @@ angular.module('taskApp',['ui.router'])
             })            
             .state('editar',{
                 url:'/editar',
-                templateUrl:'views/tarea_editar.html'
+                templateUrl:'views/tarea_editar.html',
+                controller: 'ControlEditar'
             });
         $urlRouterProvider.otherwise('alta');
     })
@@ -29,13 +30,15 @@ angular.module('taskApp',['ui.router'])
             prioridad: 2   
         }]
 
-         comun.eliminar = function(tarea) {
+        comun.tarea = {}; //Se utilizara para editar
+
+        comun.eliminar = function(tarea) {
             var indice = comun.tareas.indexOf(tarea);
             comun.tareas.splice(indice,1);
         }
         return comun;
     })
-    .controller('ControlAgregar', function($scope, comun){
+    .controller('ControlAgregar', function($scope, $state, comun){
         $scope.tarea = {};
         //$scope.tareas = [];
         $scope.tareas = comun.tareas;
@@ -60,4 +63,23 @@ angular.module('taskApp',['ui.router'])
         $scope.eliminar = function(tarea) {
             comun.eliminar(tarea);
         }
+
+        $scope.procesaObjeto = function(tarea) {
+            comun.tarea = tarea;           
+            $state.go('editar');
+        }
+    })
+    .controller('ControlEditar', function($scope, $state, comun){
+        $scope.tarea = comun.tarea;
+        
+
+        $scope.actualizar = function(){
+            var indice = comun.tareas.indexOf(comun.tarea);
+            comun.tareas[indice] = $scope.tarea;
+            $state.go('alta');
+        }
+
+
+
+
     })
