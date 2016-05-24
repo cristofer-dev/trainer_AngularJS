@@ -6,29 +6,71 @@
   
   
   <script src="angular_1.5.5.min.js"></script>
-  <link rel="stylesheet" href="css/bootstrap.min.css">
+  
+  <link rel="stylesheet" href="css/bootswatch.css">
   <script type="text/javascript" src="js/controller.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js" ></script>
 </head>
 <body ng-controller="TaskListCtrl">
 <div class="container">
-    
+
+
+
+
 
     <div class="panel panel-primary">
-        <div class="panel-heading">Lista de Tareas</div>
+        <div class="panel-heading"><h2>Gestor de Tareas</h2></div>
         <div class="panel-body">
+
+
+            <legend>Nueva Tarea</legend>
+                <div class="form-group">
+                <form action="">
+                <div class="row">
+                    <div class="col-md-8">
+                        <label class="control-label" for="inputDefault">Nueva Tarea</label>
+                        <input class="form-control" id="inputDefault" type="text" ng-model="tarea.nombre">
+                    </div>
+                    <div class="col-md-2">
+                        <label class="control-label" for="inputDefault">Prioridad</label>
+                        <select class="form-control" id="select" ng-model="tarea.prioridad">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                    <div class="col-md-1">
+                        <label class="control-label" for="inputDefault">Guardar</label><br>
+                        <button type="submit" id="submit" class="btn btn-success">Agregar</button>
+                    </div>
+                    
+
+                    
+                </div>
+                </form>
+                </div>    
+
+        
             
         </div>
-            <table class="table">
+
+        <div class="row">
+            <div class="col-md-12 col-lg-6">
+            <table class="table table-striped table-hover">
                 <tr>
                     <td>Prioridad</td>
                     <td>Tarea</td>                    
                 </tr>
-                <tr ng-repeat="task in tasks">
-                    <td>{{task.priority}}</td>
-                    <td>{{task.description}}</td>                    
+                <tr ng-repeat="tarea in tareas">
+                    <td>{{tarea.priority}} 
+                        <a href="#" class="glyphicon glyphicon-circle-arrow-up fa-2x"></a>
+                        <a href="#" class="glyphicon glyphicon-circle-arrow-down fa-lg"></a>
+                    </td>
+                    <td>{{tarea.description}}</td>                    
                 </tr>
             </table>
+            </div>
+        </div>
         
         <div class="panel-footer">Panel Footer</div>
     </div>

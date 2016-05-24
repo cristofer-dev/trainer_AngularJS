@@ -1,7 +1,7 @@
 var taskApp = angular.module('taskApp', []);
 
 taskApp.controller('TaskListCtrl', function ($scope) {
-  $scope.tasks = [
+  $scope.tareas = [
     {'description': 'Comprar Boletos de Avion',
      'priority': '2'},
      {'description': 'Comprar Huevosn',
