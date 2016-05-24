@@ -16,6 +16,8 @@ angular.module('taskApp',['ui.router'])
         $scope.tarea = {};
         $scope.tareas = [];
 
+        $scope.prioridades = ['Baja', 'Normal', 'Alta']
+
         $scope.agregar = function(){
             $scope.tareas.push({
                 nombre : $scope.tarea.nombre,
