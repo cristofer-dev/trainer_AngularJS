@@ -29,6 +29,10 @@ angular.module('taskApp',['ui.router'])
             prioridad: 2   
         }]
 
+         comun.eliminar = function(tarea) {
+            var indice = comun.tareas.indexOf(tarea);
+            comun.tareas.splice(indice,1);
+        }
         return comun;
     })
     .controller('ControlAgregar', function($scope, comun){
@@ -54,7 +58,6 @@ angular.module('taskApp',['ui.router'])
         }
 
         $scope.eliminar = function(tarea) {
-            var indice = $scope.tareas.indexOf(tarea);
-            $scope.tareas.splice(indice,1);
+            comun.eliminar(tarea);
         }
     })
