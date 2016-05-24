@@ -31,7 +31,7 @@
                     <td>Prioridad</td>
                     <td>Tarea</td>                    
                 </tr>
-                <tr ng-repeat="tarea in tareas">
+                <tr ng-repeat="tarea in tareas | orderBy:'-prioridad'">
                     <td>{{prioridades[tarea.prioridad]}} 
                         <a href="#" class="glyphicon glyphicon-circle-arrow-up fa-2x"></a>
                         <a href="#" class="glyphicon glyphicon-circle-arrow-down fa-lg"></a>
