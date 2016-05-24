@@ -12,9 +12,29 @@ angular.module('taskApp',['ui.router'])
             });
         $urlRouterProvider.otherwise('alta');
     })
-    .controller('ControlAgregar', function($scope){
+    .factory('comun', function(){
+        var comun = {}
+
+        comun.tareas = [{
+            nombre: 'Comprar Comida',
+            prioridad: 1   
+        },{
+            nombre: 'Lavar el Auto',
+            prioridad: 0   
+        },{
+            nombre: 'Crear una App en Angular',
+            prioridad: 2   
+        },{
+            nombre: 'Pintar la casa',
+            prioridad: 2   
+        }]
+
+        return comun;
+    })
+    .controller('ControlAgregar', function($scope, comun){
         $scope.tarea = {};
-        $scope.tareas = [];
+        //$scope.tareas = [];
+        $scope.tareas = comun.tareas;
 
         $scope.prioridades = ['Baja', 'Normal', 'Alta']
 
